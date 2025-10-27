@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hima Bindu Nowly | Java & IoT Developer</title>
+    <style>
+        body {
+            background: #18192b;
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            color: #fff;
+            scroll-behavior: smooth;
+        }
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 95vh;
+            padding: 0 6vw;
+            background: linear-gradient(90deg, #18192b 60%, #232437 100%);
+        }
+        .hero-img {
+            width: 350px;
+            max-width: 36vw;
+            height: 370px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-right: 5vw;
+            box-shadow: 0 4px 24px #23223299;
+            border: 3px solid #3f51b5;
+            background: #232437;
+        }
+        .hero-content {
+            flex: 1;
+            max-width: 600px;
+        }
+        .headline {
+            font-size: 2.6em;
+            font-weight: 800;
+            line-height: 1.08;
+            margin-bottom: 18px;
+        }
+        .headline .secondary {
+            color: #97a2eb;
+            font-weight: 900;
+        }
+        .title {
+            font-size: 1.35em;
+            margin-bottom: 10px;
+            color: #7db8e2;
+            font-weight: bold;
+        }
+        .contact-info {
+            margin-bottom: 24px;
+            font-size: 1.06em;
+        }
+        .contact-detail {
+            margin-right: 18px;
+            color: #e1e4fa;
+        }
+        .career-obj {
+            font-size: 1.12em;
+            margin: 20px 0 0 0;
+            color: #eee;
+            line-height: 1.47;
+        }
+        .nav {
+            width: 100vw;
+            background: #3f51b5;
+            padding: 0 6vw;
+            color: #fff;
+            z-index: 10;
+        }
+        .nav-list {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            height: 54px;
+            font-size: 1.06em;
+        }
+        .nav-link {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 8px 18px;
+            border-radius: 8px 8px 0 0;
+            transition: background 0.18s;
+        }
+        .nav-link.active, .nav-link:hover {
+            background: #1a237e;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 24px 0 24px;
+        }
+        .section-title {
+            color: #7db8e2;
+            font-weight: bold;
+            font-size: 1.44em;
+            margin-top: 24px;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+        .card-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+        .card {
+            background: #22233a;
+            border: 2px solid #1976d2;
+            border-radius: 12px;
+            padding: 24px 25px 18px 25px;
+            min-width: 215px;
+            flex: 1 1 230px;
+            margin-bottom: 16px;
+            opacity: 0;
+            transform: translateY(65px) scale(0.92);
+            transition: opacity 0.7s, transform 0.7s cubic-bezier(.68,1.45,.43,.97), box-shadow 0.2s;
+        }
+        .card.visible {
+            opacity: 1;
+            transform: translateY(0) scale(1.05);
+            animation: popUpCard 0.6s cubic-bezier(.35,1.36,.38,.98);
+        }
+        @keyframes popUpCard {
+            0% {
+                opacity: 0;
+                transform: translateY(65px) scale(0.92);
+            }
+            60% {
+                opacity: 1;
+                transform: translateY(-12px) scale(1.08);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1.05);
+            }
+        }
+        .other-section .card.visible {
+            animation: fadeUp .7s cubic-bezier(.39,1.14,.41,.96);
+        }
+        @keyframes fadeUp {
+            0% {
+                opacity: 0;
+                transform: translateY(55px) scale(0.97);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1.02);
+            }
+        }
+        .card:hover {
+            box-shadow: 0 8px 28px #73bfffd1, 0 2px 2px #23233a77;
+            transform: scale(1.06);
+        }
+        .card-title {
+            font-weight: bold;
+            color: #7db8e2;
+            font-size: 1.16em;
+            margin-bottom: 12px;
+        }
+        .card-detail {
+            font-size: 1.07em;
+            margin-bottom: 4px;
+        }
+        .detail-list {
+            margin: 0 0 10px 0;
+            padding-left: 18px;
+        }
+        @media (max-width:900px) {
+            .hero { flex-direction: column; text-align: center; height: unset; padding: 40px 4vw; }
+            .hero-img { margin-right: 0; margin-bottom: 18px; width: 210px; height: 250px; }
+            .hero-content { max-width: 90vw; }
+            .card-grid { flex-direction: column; }
+            .card { min-width: unset; width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <ul class="nav-list">
+            <li><a href="#about" class="nav-link active">About</a></li>
+            <li><a href="#education" class="nav-link">Education</a></li>
+            <li><a href="#skills" class="nav-link">Skills</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#certificates" class="nav-link">Certificates</a></li>
+            <li><a href="#family" class="nav-link">Family</a></li>
+        </ul>
+    </nav>
+    <section class="hero" id="about">
+        <img src="photo.jpg" alt="Profile photo" class="hero-img">
+        <div class="hero-content">
+            <div class="headline">
+                I'm Hima Bindu.<br>
+                <span class="secondary">IoT & Java Developer</span><br>
+                based in Kurnool, India.
+            </div>
+            <div class="title">Passionate Problem Solver • Fast Learner • Team Player</div>
+            <div class="contact-info">
+                <span class="contact-detail">📧 nowlybindu@gmail.com</span>
+                <span class="contact-detail">📱 7780586914</span>
+            </div>
+            <div class="career-obj">
+                Passionate and dedicated IoT and Java developer with strong skills in Core Java, SQL, HTML, and JavaScript. Seeking an entry-level position to apply my technical knowledge, enhance my skills in full stack development, and contribute to innovative software solutions.
+            </div>
+        </div>
+    </section>
+    <div class="container" id="education">
+        <div class="section-title">Education</div>
+        <div class="card-grid">
+            <div class="card">
+                <div class="card-title">10th (SSC)</div>
+                <div class="card-detail"><b>School:</b> Keshava Reddy English Medium School, Kurnool</div>
+                <div class="card-detail"><b>Year:</b> 2019</div>
+                <div class="card-detail"><b>CGPA:</b> 8.3</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Intermediate (MPC)</div>
+                <div class="card-detail"><b>Institution:</b> Narayana Junior College, Kurnool</div>
+                <div class="card-detail"><b>Year:</b> 2021</div>
+                <div class="card-detail"><b>CGPA:</b> 7.57</div>
+            </div>
+            <div class="card">
+                <div class="card-title">B.Tech (CSE-IoT)</div>
+                <div class="card-detail"><b>Institution:</b> G. Pullaiah College of Engineering and Technology, JNTUA</div>
+                <div class="card-detail"><b>Year:</b> 2025</div>
+                <div class="card-detail"><b>CGPA:</b> 7.38</div>
+            </div>
+        </div>
+    </div>
+    <div class="container other-section" id="skills">
+        <div class="section-title">Technical Skills</div>
+        <div class="card-grid">
+            <div class="card">
+                <ul class="detail-list">
+                    <li>Programming Languages: Java, C</li>
+                    <li>Web Technologies: HTML, SQL, JavaScript</li>
+                    <li>Tools: Ms Excel, Ms Word, Ms PowerPoint, PowerBI, Git, Github</li>
+                    <li>Other: Software testing basics, Software Development Basics, IoT skills</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container other-section" id="projects">
+        <div class="section-title">Projects</div>
+        <div class="card-grid">
+            <div class="card">
+                <ul class="detail-list">
+                    <li>Water Level Monitoring (tracks water levels in various bodies)</li>
+                    <li>Smart Soil Water Alert Using IoT (real-time soil moisture monitoring with Arduino)</li>
+                    <li>Intelligent IoT System with AI and ML for Smart Home Automation (home automation using Raspberry Pi, sensors, facial recognition, and more)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container other-section" id="certificates">
+        <div class="section-title">Certificates</div>
+        <div class="card-grid">
+            <div class="card">
+                <ul class="detail-list">
+                    <li>Certified in Java on NPTEL Platform</li>
+                    <li>Certified in Cambridge Linguaskills</li>
+                    <li>Certified in Problem Solving on HackerRank</li>
+                    <li>Certified in TCS CodeVita Season 12</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container other-section" id="family">
+        <div class="section-title">Family Details</div>
+        <div class="card-grid">
+            <div class="card">
+                <ul class="detail-list">
+                    <li>Date of Birth: 15-08-2004</li>
+                    <li>Father’s Name: Nowly Venkata Ramana Raja Rao</li>
+                    <li>Address: H.no 6-153, plot.no 112, Landmark Avenues, Peddapadu, Kurnool, Andhra Pradesh 518001</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Reveal cards with different animation classes
+        function revealCards() {
+            var cards = document.querySelectorAll('.card');
+            var windowHeight = window.innerHeight;
+            for (var i = 0; i < cards.length; i++) {
+                var top = cards[i].getBoundingClientRect().top;
+                if (top < windowHeight - 80) {
+                    cards[i].classList.add("visible");
+                }
+            }
+        }
+        window.addEventListener("scroll", revealCards);
+        window.addEventListener("load", revealCards);
+    </script>
+</body>
+</html>
